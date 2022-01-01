@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.ace_scroller.ace_scroll-left{
+  box-shadow: none;
+}
