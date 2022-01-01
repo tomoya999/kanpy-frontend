@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "@heroicons/react": "^1.0.5",
-        "@reduxjs/toolkit": "^1.6.1",
+        "@reduxjs/toolkit": "^1.7.1",
         "@szhsin/react-menu": "^2.3.0",
         "ace-builds": "^1.4.13",
         "axios": "^0.24.0",
