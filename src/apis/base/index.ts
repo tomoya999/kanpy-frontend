@@ -42,8 +42,7 @@ const _handleAuthError = async (error: AxiosError) => {
 }
 
 const authAPI = axios.create({
-  // baseURL: import.meta.env.VITE_API_URL,
-  baseURL: 'http://localhost:8000',
+  baseURL: import.meta.env.VITE_API_URL,
   timeout: 5000,
   headers: {
     'X-Requested-With': 'XMLHttpRequest',
@@ -55,8 +54,7 @@ const authAPI = axios.create({
 authAPI.interceptors.response.use(_handleResponse, _handleAuthError);
 
 const api = axios.create({
-  // baseURL: import.meta.env.VITE_API_URL,
-  baseURL: 'http://localhost:8000',
+  baseURL: import.meta.env.VITE_API_URL,
   timeout: 5000,
   headers: {
     'X-Requested-With': 'XMLHttpRequest',
