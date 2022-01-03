@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { LoginRequired } from "./components";
+import { IfAuthRedirect, LoginRequired } from "./components";
 import { LoginPage, WorkspacePage } from "./pages";
 import ProjectListPage from "./pages/ProjectListPage";
 import { MainContent } from "./sections";
@@ -10,7 +10,11 @@ const App = (): JSX.Element =>{
   return (
     <Router>
       <Routes>
-        <Route path='' element={<LoginPage />} />
+        <Route path='' element={
+          <IfAuthRedirect>
+            <LoginPage />
+          </IfAuthRedirect>
+        } />
         <Route path='projects' element={
           <LoginRequired>
             <ProjectListPage />

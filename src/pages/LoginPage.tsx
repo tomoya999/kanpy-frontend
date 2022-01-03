@@ -1,34 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginAPI, refreshAPI } from "../apis/account";
+import { loginAPI } from "../apis/account";
 
 const LoginPage = (): JSX.Element => {
 
-  // const email: string = 'tomoya999@zohomail.com';
-  // const password: string = '3Tapgdmw028';
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
   const handleClick = async(): Promise<void> => {
     const res: any = await loginAPI(email, password);
+    console.log(res);
+    
     if(res.isSuccess){
       navigate('projects');
     }
   };
 
-  useEffect(() => {
-    const setup = async(): Promise<void> => {
-      const res: any = await refreshAPI();
-      if(res.isSuccess){
-        navigate('projects');
-      }
-    };
-
-    setup();
-    
-  }, []);
-  
   return (
     <div className="flex justify-center items-center w-screen h-screen bg-gradient-to-r from-violet-900 via-yellow-100 to-rose-300">
       <div className="border rounded-xl bg-white bg-opacity-90 py-20 h-auto w-4/6">

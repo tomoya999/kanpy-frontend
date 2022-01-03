@@ -10,6 +10,7 @@ import AddSectionMenuItem from './AddSectionMenuItem';
 import RmSectioMenuItem from './RmSectioMenuItem';
 import ProjectFolder from './ProjectFolder';
 import LoginRequired from './LoginRequired';
+import IfAuthRedirect from './IfAuthRedirect';
 
 export {
   AccordionHeader,
@@ -24,4 +25,5 @@ export {
   RmSectioMenuItem,
   ProjectFolder,
   LoginRequired,
+  IfAuthRedirect,
 };
