@@ -7,4 +7,5 @@ export default defineConfig({
     open: true,
   },
   plugins: [reactRefresh()],
+  css: { preprocessorOptions: { scss: { charset: false } } }
 })
