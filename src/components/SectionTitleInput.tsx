@@ -1,5 +1,4 @@
-import React, { useRef } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
 import { updateSectionTitleAPI } from "../apis/section";
 import { useAppDispatch } from "../app/hooks";
 import { setSectionName } from "../features/project/projectSlice";
@@ -8,7 +7,6 @@ import { useEnterBlur } from "../hooks/windowSize";
 const SectionTitleInput = ({ section, toggleIsEditting }: any): JSX.Element => {
   
   const dispatch = useAppDispatch();
-  const { sectionUuid }: any = useParams();
   const { inputRef, enterBlur } = useEnterBlur();
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
