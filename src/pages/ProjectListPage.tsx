@@ -6,25 +6,26 @@ import { AddProject } from "../widgets";
 const ProjectListPage = (): JSX.Element => {
 
   const [projects, setProjects] = useState([]);
+  const [unmounted, setUnmounted] = useState<boolean>(false);
 
   useEffect(() => {
     const setup = async(): Promise<void> => {
       const res: any = await api.get('/v1/projects');
+      
       if(res.isSuccess){
         setProjects(res.data.projects);
       }
     };
-    let unmounted = false;
 
-    if(unmounted){
+    if(!unmounted){
 
       setup();
+      
     }
-
     return () => {
-      unmounted = true
+      setUnmounted(true);
     }
-  }, []);
+  }, [unmounted]);
   
   return (
     <div className="flex justify-center items-center w-screen h-screen bg-gradient-to-r from-violet-900 via-yellow-100 to-rose-300">

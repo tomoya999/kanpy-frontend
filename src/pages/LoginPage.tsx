@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginAPI } from "../apis/account";
+import { loginAPI, refreshAPI } from "../apis/account";
 
 const LoginPage = (): JSX.Element => {
 
@@ -15,7 +15,19 @@ const LoginPage = (): JSX.Element => {
     if(res.isSuccess){
       navigate('projects');
     }
-  }
+  };
+
+  useEffect(() => {
+    const setup = async(): Promise<void> => {
+      const res: any = await refreshAPI();
+      if(res.isSuccess){
+        navigate('projects');
+      }
+    };
+
+    setup();
+    
+  }, []);
   
   return (
     <div className="flex justify-center items-center w-screen h-screen bg-gradient-to-r from-violet-900 via-yellow-100 to-rose-300">
