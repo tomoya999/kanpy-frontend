@@ -7,14 +7,20 @@ export default defineConfig({
     open: true,
   },
   plugins: [reactRefresh()],
-  css: { preprocessorOptions:
-    {
-      css: {
-        charset: false
-      },
-      scss: {
-        charset: false
-      }
+  css: {
+    postcss: {
+      plugins: [
+        {
+          postcssPlugin: 'internal:charset-removal',
+          AtRule: {
+            charset: (atRule) => {
+              if (atRule.name === 'charset') {
+                atRule.remove();
+              }
+            }
+          }
+        }
+      ]
     }
   }
 })
