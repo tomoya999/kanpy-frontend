@@ -9,6 +9,7 @@ import '@szhsin/react-menu/dist/index.css';
 import '@szhsin/react-menu/dist/transitions/slide.css';
 import RmNoteMenuItem from "../components/RmNoteMenuItem";
 import { useSetupWindowSize } from "../hooks/windowSize";
+import { logoutAPI } from "../apis/account";
 
 const WorkspacePage = (): JSX.Element => {
 
