@@ -15,7 +15,7 @@ const _handleResponse = (res: any) => {
 const _handleError = async (error: AxiosError) => {
   if (error.response?.status === 401) {
     const res = await refreshAPI();
-    // store.dispatch(setAccessToken(res.data.access));
+    store.dispatch(setAccessToken(res.data.access));
     if(res.status === 200){
       // retry request
       return await api.request(error.config)
@@ -63,6 +63,7 @@ const api = axios.create({
   withCredentials:true
 });
 api.interceptors.request.use(async config => {
+  
   let accessToken = store.getState().user.accessToken;
   if(!accessToken){
     const res: any = await refreshAPI();
@@ -74,6 +75,7 @@ api.interceptors.request.use(async config => {
   }
   accessToken = store.getState().user.accessToken;
   config.headers = {
+    ...config.headers,
     Authorization: `Bearer ${accessToken}`
   };
   return config;
