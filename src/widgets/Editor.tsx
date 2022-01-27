@@ -30,7 +30,6 @@ const Editor = ({ onBlur }: any): JSX.Element => {
   }
   
   const handleOnLoad = (editor: IAceEditor): void => {
-    editor.renderer.setPadding(80);
     editor.setShowPrintMargin(false);
     
   }

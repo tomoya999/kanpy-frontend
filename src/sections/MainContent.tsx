@@ -39,7 +39,7 @@ const MainContent = (): JSX.Element => {
   };
 
   return (
-    <main className="py-12" style={ {height: `${height}px`} }>
+    <main className="py-12 overflow-scroll" style={ {height: `${height}px`} }>
       <div className="w-full h-full flex flex-col">
         <div className="flex justify-center content-center py-10">
           <NoteTitle title={ note.title } />

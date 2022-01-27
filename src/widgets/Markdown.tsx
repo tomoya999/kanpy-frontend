@@ -13,7 +13,7 @@ const Markdown = ({ onDoubleClick }: any): JSX.Element => {
   
   return (
     <div
-      className="text-left text-xl pt-16 px-40 w-full"
+      className="text-left text-xl pt-16 px-10 md:px-16 lg:px-20 xl:px-40 w-full"
       onDoubleClick={ onDoubleClick }
     >
       <ReactMarkdown

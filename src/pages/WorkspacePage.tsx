@@ -45,11 +45,11 @@ const WorkspacePage = (): JSX.Element => {
     // <div className="bg-gradient-to-r from-violet-300 via-yellow-900 to-rose-2300">
     <div className="bg-rose-100">
       <div className="grid grid-cols-12 bg-white bg-opacity-80">
-        <div className="lg:col-span-3 xl:col-span-2">
+        <div className="sm:col-span-4 md:col-span-3 xl:col-span-2">
           <Sidebar />
         </div>
         <div
-          className="lg:col-span-9 xl:col-span-10"
+          className="sm:col-span-8 md:col-span-9 xl:col-span-10"
           onContextMenu={ handleContextMenu }
         >
           < Outlet />

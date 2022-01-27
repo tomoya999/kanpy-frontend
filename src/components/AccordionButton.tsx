@@ -22,7 +22,7 @@ const AccordionButton = ({ section, handleContextMenu }: any): JSX.Element => {
       onClick={toggleAccordion}
       onContextMenu={ handleContextMenu }
     >
-      <p className="inline-block text-footnote light font-bold text-xl text-gray-800">{ section.title }</p>
+      <p className="inline-block text-footnote light font-bold lg:text-xl text-gray-800">{ section.title }</p>
       <ChevronDownIcon className={`${rotateClassName} inline-block w-7`} />
     </button>
   )
