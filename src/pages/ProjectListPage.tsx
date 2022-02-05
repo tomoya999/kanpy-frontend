@@ -28,7 +28,7 @@ const ProjectListPage = (): JSX.Element => {
     }
   }, [unmounted]);
   
-  if(!projects){
+  if(!projects.length){
     return <LoadingIcon />
   }
   
