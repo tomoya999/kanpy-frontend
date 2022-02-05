@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { api } from "../apis/base";
 import { ProjectFolder } from "../components";
+import LoadingIcon from "../components/LoadingIcon";
 import { AddProject } from "../widgets";
 
 const ProjectListPage = (): JSX.Element => {
@@ -26,6 +27,10 @@ const ProjectListPage = (): JSX.Element => {
       setUnmounted(true);
     }
   }, [unmounted]);
+  
+  if(!projects){
+    return <LoadingIcon />
+  }
   
   return (
     <div className="flex justify-center items-center w-screen h-screen bg-gradient-to-r from-violet-900 via-yellow-100 to-rose-300">
