@@ -20,7 +20,7 @@ const IfAuthRedirect = ({ children }: IfAuthRedirectProps): JSX.Element => {
 
     setup();
     
-  }, []);
+  }, [navigate]);
 
   return <>{ children }</>
 

@@ -19,15 +19,15 @@ const Markdown = ({ onDoubleClick }: any): JSX.Element => {
       <ReactMarkdown
         components={{
           code: CodeBlock,
-          h1: ({node, ...props}) => <h1 className="text-4xl text-gray-600">{ props.children }</h1>,
-          h2: ({node, ...props}) => <h2 className="text-3xl text-gray-600">{ props.children }</h2>,
-          h3: ({node, ...props}) => <h3 className="text-3xl text-gray-600">{ props.children }</h3>,
-          h4: ({node, ...props}) => <h4 className="text-2xl text-gray-600">{ props.children }</h4>,
-          h5: ({node, ...props}) => <h5 className="text-xl text-gray-600">{ props.children }</h5>,
-          h6: ({node, ...props}) => <h6 className="text-lg text-gray-600">{ props.children }</h6>,
-          p: ({node, ...props}) => <p className="text-base text-gray-600">{ props.children }</p>,
-          a: ({node, ...props}) => <a href={props.href} className="text-lg text-blue-600 hover:text-blue-400">{ props.children }</a>,
-          li: ({node, ...props}) => {
+          h1: ({ ...props }) => <h1 className="text-4xl text-gray-600">{ props.children }</h1>,
+          h2: ({ ...props }) => <h2 className="text-3xl text-gray-600">{ props.children }</h2>,
+          h3: ({ ...props }) => <h3 className="text-3xl text-gray-600">{ props.children }</h3>,
+          h4: ({ ...props }) => <h4 className="text-2xl text-gray-600">{ props.children }</h4>,
+          h5: ({ ...props }) => <h5 className="text-xl text-gray-600">{ props.children }</h5>,
+          h6: ({ ...props }) => <h6 className="text-lg text-gray-600">{ props.children }</h6>,
+          p: ({ ...props }) => <p className="text-base text-gray-600">{ props.children }</p>,
+          a: ({ ...props }) => <a href={props.href} className="text-lg text-blue-600 hover:text-blue-400">{ props.children }</a>,
+          li: ({ ...props }) => {
             return props.ordered 
               ? <li className="text-base text-gray-600 list-decimal">{ props.children }</li>
               : <li className="text-base text-gray-600 list-disc">{ props.children }</li>

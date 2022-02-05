@@ -28,7 +28,7 @@ const NoteTitle = ({ title }: Props): JSX.Element => {
   };
 
   const handleBlur = async(e: React.ChangeEvent<HTMLInputElement>): Promise<void> => {
-    const res = await updateNoteTitleAPI({ noteUuid, title: e.target.value });
+    await updateNoteTitleAPI({ noteUuid, title: e.target.value });
     toggleIsEditting();
   };
 

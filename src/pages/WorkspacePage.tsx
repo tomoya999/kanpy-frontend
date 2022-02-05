@@ -1,6 +1,6 @@
 import { useMenuState, ControlledMenu, MenuItem, applyStatics } from "@szhsin/react-menu";
 import React, { useEffect, useState } from "react";
-import { Outlet, useNavigate, useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { api } from "../apis/base";
 import { useAppDispatch } from "../app/hooks";
 import { setProject } from "../features/project/projectSlice";
@@ -9,7 +9,6 @@ import '@szhsin/react-menu/dist/index.css';
 import '@szhsin/react-menu/dist/transitions/slide.css';
 import RmNoteMenuItem from "../components/RmNoteMenuItem";
 import { useSetupWindowSize } from "../hooks/windowSize";
-import { logoutAPI } from "../apis/account";
 
 const WorkspacePage = (): JSX.Element => {
 

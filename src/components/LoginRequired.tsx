@@ -20,13 +20,13 @@ const LoginRequired = ({ children }: LoginRequiredProp): JSX.Element => {
         await dispatch(setAccessTokenAsync());
       }catch(e){
         console.log(e);
-      };
+      }
     };
 
     if(accessToken === ''){
       setup();
     }
-  }, [accessToken]);
+  }, [accessToken, dispatch]);
 
 
   if(status === 'loading'){

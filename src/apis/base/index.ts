@@ -13,9 +13,11 @@ const _handleResponse = (res: any) => {
 };
 
 const _handleError = async (error: AxiosError) => {
+
   if (error.response?.status === 401) {
     const res = await refreshAPI();
     store.dispatch(setAccessToken(res.data.access));
+    
     if(res.status === 200){
       // retry request
       return await api.request(error.config)
@@ -53,6 +55,7 @@ const authAPI = axios.create({
 
 authAPI.interceptors.response.use(_handleResponse, _handleAuthError);
 
+
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
   timeout: 5000,
@@ -62,6 +65,7 @@ const api = axios.create({
   },
   withCredentials:true
 });
+
 api.interceptors.request.use(async config => {
   
   let accessToken = store.getState().user.accessToken;

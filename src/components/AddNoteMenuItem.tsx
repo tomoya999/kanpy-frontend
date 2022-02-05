@@ -16,7 +16,7 @@ const AddNoteMenuItem = (props: any): JSX.Element => {
       const note = res.data.note
       dispatch(addNote({ sectionUuid: props.section.uuid, note }));
       navigate(`section/${props.section.uuid}/note/${note.uuid}`)
-    };
+    }
   };
   
   return (

@@ -1,5 +1,4 @@
 import { MenuItem } from "@szhsin/react-menu";
-import { AxiosResponse } from "axios";
 import React from "react";
 import { useParams } from "react-router-dom";
 import { createSectionAPI } from "../apis/section";

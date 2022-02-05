@@ -8,7 +8,7 @@ import { rmNote, selectProjectUuid, selectSectionByNoteUuid } from "../features/
 
 const RmNoteMenuItem = (props: any): JSX.Element => {
 
-  const { sectionUuid, noteUuid }: any = useParams();
+  const { noteUuid }: any = useParams();
   const section: any = useAppSelector((state: RootState) => selectSectionByNoteUuid(state, props.note.uuid));
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const RmNoteMenuItem = (props: any): JSX.Element => {
 
   const handleClick = async(): Promise<void> => {
     
-    let targetUuid: string = props.note
+    const targetUuid: string = props.note
       ? props.note.uuid
       : noteUuid
 
