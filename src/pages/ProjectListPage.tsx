@@ -29,7 +29,11 @@ const ProjectListPage = (): JSX.Element => {
   }, [unmounted]);
   
   if(!projects.length){
-    return <LoadingIcon />
+    return (
+      <div className="h-screen w-screen flex justify-center items-center">
+        <LoadingIcon />
+      </div>
+    );
   }
   
   return (
